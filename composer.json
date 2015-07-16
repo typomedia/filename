@@ -1,0 +1,27 @@
+{
+    "name": "kumatch/filename-normalizer",
+    "description":"A string normalizer for filesystem name.",
+    "type":"library",
+    "homepage": "https://github.com/kumatch/php-filename-normalizer",
+    "keywords":["filename", "filesystem"],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Yosuke Kumakura",
+            "homepage": "https://github.com/kumatch"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kumatch\\FilenameNormalizer\\": "src/",
+            "Kumatch\\FilenameNormalizer\\Test\\": "tests/"
+        }
+    }
+}
