@@ -3,6 +3,8 @@ filename-normalizer
 
 A string normalizer for filesystem name.
 
+[![Build Status](https://travis-ci.org/kumatch/php-filename-normalizer.png?branch=master)](https://travis-ci.org/kumatch/php-filename-normalizer)
+
 Install
 -----
 
