@@ -1,4 +1,3 @@
-.idea
-phpunit.xml
-vendor
-composer.lock
+/.idea
+/vendor
+/composer.lock

@@ -1,5 +1,5 @@
 <?php
-namespace Kumatch\FilenameNormalizer;
+namespace glen\FilenameNormalizer;
 
 class Normalizer
 {
@@ -8,7 +8,7 @@ class Normalizer
      * @param string $replacement
      * @return mixed
      */
-    public static function normalize($name, $replacement = "-")
+    public static function normalize($name, $replacement = '-')
     {
         $entries = array('\\', '/', '?', ':', '*', '"', '>', '<', '|');
 

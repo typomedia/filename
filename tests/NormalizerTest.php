@@ -1,21 +1,11 @@
 <?php
-namespace Kumatch\FilenameNormalizer\Test;
+namespace glen\FilenameNormalizer\Test;
 
-use Kumatch\FilenameNormalizer\Normalizer;
+use glen\FilenameNormalizer\Normalizer;
+use PHPUnit\Framework\TestCase;
 
-class NormalizerTest extends \PHPUnit_Framework_TestCase
+class NormalizerTest extends TestCase
 {
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    protected function tearDown()
-    {
-        parent::tearDown();
-    }
-
-
     public function provideCharacters()
     {
         return array(

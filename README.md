@@ -1,50 +1,45 @@
-filename-normalizer
-===========
+# filename-normalizer
 
 A string normalizer for filesystem name.
 
-[![Build Status](https://travis-ci.org/kumatch/php-filename-normalizer.png?branch=master)](https://travis-ci.org/kumatch/php-filename-normalizer)
+[![Build Status](https://travis-ci.org/glensc/php-filename-normalizer.png?branch=master)](https://travis-ci.org/glensc/php-filename-normalizer)
 
-Install
------
+## Install
 
-    $ composer require kumatch/filename-normalizer
+    $ composer require glen/filename-normalizer
 
 
-Usage
------
+## Usage
 
 ```php
 <?php
 
-use Kumatch\FilenameNormalizer\Normalizer;
+use glen\FilenameNormalizer\Normalizer;
 
 echo Normalizer::normalize("foo?bar/baz?qux.txt");  // replace to "foo-bar-baz-qux.txt"
 ```
 
 
-Api
-----
+## Api
 
 ### Normalizer::normalize($name, $replacement = "-");
 
-Reaplce characters cannot be used in a filename.
+Replace characters cannot be used in a filename.
 
 
-See also
--------
+## See also
 
 * [File names and file name extensions: frequently asked questions (Windows)](http://windows.microsoft.com/en-us/windows/file-names-extensions-faq)
 * [OS X: Cross-platform filename best practices and conventions (OSX)](https://support.apple.com/en-us/HT202808)
 
 
 
-License
---------
+## License
 
 Licensed under the MIT License.
 
 Copyright (c) 2015 Yosuke Kumakura
+Copyright (c) 2018 Elan Ruusamäe
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
