@@ -1,4 +1,5 @@
 <?php
+
 namespace glen\FilenameNormalizer\Test;
 
 use glen\FilenameNormalizer\Normalizer;
@@ -47,5 +48,13 @@ class NormalizerTest extends TestCase
         $result = "foo!+bar!+baz.txt";
 
         $this->assertEquals($result, Normalizer::normalize($name, $replacement));
+    }
+
+    public function testNormalizeNullByte()
+    {
+        $name = 'Töömurdja.jpg' . chr(0) . chr(0);
+        $result = 'Töömurdja.jpg';
+
+        $this->assertEquals($result, Normalizer::normalize($name));
     }
 }
