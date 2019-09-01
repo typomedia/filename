@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- https://phpunit.de/manual/current/en/appendixes.configuration.html -->
+<!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
 <phpunit
 	backupGlobals="false"
 	backupStaticAttributes="false"
@@ -10,7 +10,6 @@
 	convertWarningsToExceptions="true"
 	processIsolation="false"
 	stopOnFailure="false"
-	syntaxCheck="false"
 	bootstrap="vendor/autoload.php">
 
 	<testsuites>
@@ -23,12 +22,13 @@
 		<log type="coverage-text" target="php://stdout" showUncoveredFiles="true" />
 	</logging>
 
-	<!--
 	<php>
+	<!--
 		<ini name="date.timezone" value="UTC" />
 		<server name="KERNEL_DIR" value="/path/to/your/app/" />
-	</php>
+		<env name="KERNEL_CLASS" value="App\Kernel"/>
 	-->
+	</php>
 
 	<!-- for code coverage -->
 	<filter>
