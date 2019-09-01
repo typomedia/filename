@@ -18,7 +18,7 @@ class NormalizerTest extends TestCase
             array('"'),
             array('>'),
             array('<'),
-            array('|')
+            array('|'),
         );
     }
 
@@ -30,7 +30,7 @@ class NormalizerTest extends TestCase
     public function replaceCharacter($char)
     {
         $name = sprintf('foo%sbar%sbaz.txt', $char, $char);
-        $result = "foo-bar-baz.txt";
+        $result = 'foo-bar-baz.txt';
 
         $this->assertEquals($result, Normalizer::normalize($name));
     }
@@ -42,10 +42,10 @@ class NormalizerTest extends TestCase
      */
     public function replaceCharacterToSpecificCharacter($char)
     {
-        $replacement = "!+";
+        $replacement = '!+';
 
         $name = sprintf('foo%sbar%sbaz.txt', $char, $char);
-        $result = "foo!+bar!+baz.txt";
+        $result = 'foo!+bar!+baz.txt';
 
         $this->assertEquals($result, Normalizer::normalize($name, $replacement));
     }
