@@ -60,8 +60,8 @@ class FilenameTest extends TestCase
 
     public function testNormalizeWhitespace()
     {
-        $name = ' Töömurdja   Test      ';
-        $result = 'Töömurdja Test';
+        $name = ' Töömurdja   Test      Name   ';
+        $result = 'Töömurdja Test Name';
 
         $this->assertEquals($result, Filename::normalize($name));
     }
