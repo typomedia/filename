@@ -60,7 +60,7 @@ class FilenameTest extends TestCase
 
     public function testNormalizeWhitespace()
     {
-        $name = ' Töömurdja.jpg';
+        $name = ' Töömurdja.jpg    ';
         $result = 'Töömurdja.jpg';
 
         $this->assertEquals($result, Filename::normalize($name));
