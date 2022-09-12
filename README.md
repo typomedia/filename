@@ -6,7 +6,7 @@ A string normalizer for filesystem name.
 
 ## Install
 
-    $ composer require glen/filename-normalizer
+    $ composer require Typomedia/filename-normalizer
 
 
 ## Usage
@@ -14,9 +14,9 @@ A string normalizer for filesystem name.
 ```php
 <?php
 
-use glen\FilenameNormalizer\Normalizer;
+use Typomedia\Normalizer\Filename;
 
-echo Normalizer::normalize("foo?bar/baz?qux.txt");  // replace to "foo-bar-baz-qux.txt"
+echo Filename::normalize("foo?bar/baz?qux.txt");  // replace to "foo-bar-baz-qux.txt"
 ```
 
 

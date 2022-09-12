@@ -1,11 +1,11 @@
 <?php
 
-namespace glen\FilenameNormalizer\Test;
+namespace Typomedia\Normalizer\Test;
 
-use glen\FilenameNormalizer\Normalizer;
+use Typomedia\Normalizer\Filename;
 use PHPUnit\Framework\TestCase;
 
-class NormalizerTest extends TestCase
+class FilenameTest extends TestCase
 {
     public function provideCharacters()
     {
@@ -32,7 +32,7 @@ class NormalizerTest extends TestCase
         $name = sprintf('foo%sbar%sbaz.txt', $char, $char);
         $result = 'foo-bar-baz.txt';
 
-        $this->assertEquals($result, Normalizer::normalize($name));
+        $this->assertEquals($result, Filename::normalize($name));
     }
 
     /**
@@ -47,7 +47,7 @@ class NormalizerTest extends TestCase
         $name = sprintf('foo%sbar%sbaz.txt', $char, $char);
         $result = 'foo!+bar!+baz.txt';
 
-        $this->assertEquals($result, Normalizer::normalize($name, $replacement));
+        $this->assertEquals($result, Filename::normalize($name, $replacement));
     }
 
     public function testNormalizeNullByte()
@@ -55,6 +55,6 @@ class NormalizerTest extends TestCase
         $name = 'Töömurdja.jpg' . chr(0) . chr(0);
         $result = 'Töömurdja.jpg';
 
-        $this->assertEquals($result, Normalizer::normalize($name));
+        $this->assertEquals($result, Filename::normalize($name));
     }
 }

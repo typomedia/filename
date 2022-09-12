@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- https://phpunit.readthedocs.io/en/latest/configuration.html -->
-<phpunit
-	backupGlobals="false"
-	backupStaticAttributes="false"
-	colors="true"
-	convertErrorsToExceptions="true"
-	convertNoticesToExceptions="true"
-	convertWarningsToExceptions="true"
-	processIsolation="false"
-	stopOnFailure="false"
-	bootstrap="vendor/autoload.php">
-
+<phpunit backupGlobals="false" colors="true" bootstrap="vendor/autoload.php" failOnWarning="true">
 	<testsuites>
 		<testsuite name="Project Test Suite">
 			<directory>tests</directory>
 		</testsuite>
 	</testsuites>
-
-	<logging>
-		<log type="coverage-text" target="php://stdout" showUncoveredFiles="true" />
-	</logging>
-
-	<php>
-	<!--
-		<ini name="date.timezone" value="UTC" />
-		<server name="KERNEL_DIR" value="/path/to/your/app/" />
-		<env name="KERNEL_CLASS" value="App\Kernel"/>
-	-->
-	</php>
-
 	<!-- for code coverage -->
 	<filter>
 		<whitelist>

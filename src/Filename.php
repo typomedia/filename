@@ -1,10 +1,10 @@
 <?php
 
-namespace glen\FilenameNormalizer;
+namespace Typomedia\Normalizer;
 
-use Normalizer as IntlNormalizer;
+use Normalizer;
 
-class Normalizer
+class Filename
 {
     /**
      * Make filename safe:
@@ -21,14 +21,12 @@ class Normalizer
     {
         // Unicode NFC
         // https://en.wikipedia.org/wiki/Unicode_equivalence#Normal_forms
-        $name = IntlNormalizer::normalize($name, IntlNormalizer::FORM_C);
+        $name = Normalizer::normalize($name, Normalizer::FORM_C);
 
         // OS Safe characters
         $name = str_replace(array('\\', '/', '?', ':', '*', '"', '>', '<', '|'), $replacement, $name);
 
         // strip control chars, backspace and delete (including \r)
-        $name = preg_replace('/[\x00-\x08\x0b-\x1f\x7f]/', '', $name);
-
-        return $name;
+        return preg_replace('/[\x00-\x08\x0b-\x1f\x7f]/', '', $name);
     }
 }

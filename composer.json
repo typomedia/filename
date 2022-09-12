@@ -1,8 +1,8 @@
 {
-    "name": "glen/filename-normalizer",
-    "description":"A string normalizer for filesystem name.",
+    "name": "typomedia/filename",
+    "description":"Cross-platform filename normalizer",
     "type":"library",
-    "homepage": "https://github.com/glensc/php-filename-normalizer",
+    "homepage": "https://github.com/typomedia/filename",
     "keywords":["filename", "filesystem"],
     "license": "MIT",
     "authors": [
@@ -13,6 +13,10 @@
         {
             "name": "Yosuke Kumakura",
             "homepage": "https://github.com/kumatch"
+        },
+        {
+            "name": "Philipp Speck",
+            "homepage": "https://github.com/typomedia"
         }
     ],
     "require": {
@@ -24,8 +28,8 @@
     },
     "autoload": {
         "psr-4": {
-            "glen\\FilenameNormalizer\\": "src/",
-            "glen\\FilenameNormalizer\\Test\\": "tests/"
+            "Typomedia\\Normalizer\\": "src/",
+            "Typomedia\\Normalizer\\Test\\": "tests/"
         }
     }
 }
