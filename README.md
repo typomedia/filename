@@ -1,13 +1,10 @@
-# filename-normalizer
+# Filename
 
-A string normalizer for filesystem name.
-
-[![Build Status](https://travis-ci.org/glensc/php-filename-normalizer.png?branch=master)](https://travis-ci.org/glensc/php-filename-normalizer)
+Cross-platform filename normalizer.
 
 ## Install
 
-    $ composer require Typomedia/filename-normalizer
-
+    composer require typomedia/filename
 
 ## Usage
 
@@ -19,13 +16,11 @@ use Typomedia\Normalizer\Filename;
 echo Filename::normalize("foo?bar/baz?qux.txt");  // replace to "foo-bar-baz-qux.txt"
 ```
 
-
 ## Api
 
-### Normalizer::normalize($name, $replacement = "-");
+### `Normalizer::normalize($name, $replacement = "-");`
 
 Replace characters cannot be used in a filename.
-
 
 ## See also
 
@@ -33,13 +28,13 @@ Replace characters cannot be used in a filename.
 * [OS X: Cross-platform filename best practices and conventions (OSX)](https://support.apple.com/en-us/HT202808)
 
 
-
 ## License
 
 Licensed under the MIT License.
 
-Copyright (c) 2015 Yosuke Kumakura
-Copyright (c) 2018 Elan Ruusamäe
+Copyright &copy; 2015 Yosuke Kumakura
+Copyright &copy; 2018 Elan Ruusamäe
+Copyright &copy; 2022 Philipp Speck
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
