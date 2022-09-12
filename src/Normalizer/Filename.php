@@ -26,6 +26,9 @@ class Filename
         // OS Safe characters
         $name = str_replace(['\\', '/', '?', ':', '*', '"', '>', '<', '|'], $replacement, $name);
 
+        // Remove multiple whithespaces
+        $name = preg_replace('/\s\s+/', ' ', $name);
+
         // strip control chars, backspace and delete (including \r)
         return preg_replace('/[\x00-\x08\x0b-\x1f\x7f]/', '', $name);
     }
