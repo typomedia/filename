@@ -47,8 +47,6 @@ class Filename
         $string = new UnicodeString($filename);
         $name = $string->truncate($length); // filename without whitespaces
 
-        $words = $name->wordwrap($length);
-
-        return $words->toString();
+        return $name->wordwrap($length)->toString();
     }
 }
