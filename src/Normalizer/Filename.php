@@ -50,6 +50,7 @@ class Filename
 
         $string = new UnicodeString($filename);
 
+        // truncate if string has no whitespaces and was not wrapped
         return $string->truncate($length);
     }
 }
