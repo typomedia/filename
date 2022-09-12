@@ -45,8 +45,11 @@ class Filename
     public static function truncate(string $filename, int $length = 255): string
     {
         $string = new UnicodeString($filename);
-        $name = $string->truncate($length); // filename without whitespaces
 
-        return $name->wordwrap($length)->toString();
+        $filename = strtok($string->wordwrap($length), "\n");
+
+        $string = new UnicodeString($filename);
+
+        return $string->truncate($length);
     }
 }

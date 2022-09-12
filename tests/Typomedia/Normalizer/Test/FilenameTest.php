@@ -69,19 +69,19 @@ class FilenameTest extends TestCase
     public function testLongTooLongFilename()
     {
         $name = 'Lörem ipsüm dölör sit ämet, consectetur adipiscing elit.';
-        $result = 'Lörem ipsüm dölör sit';
+        $result = 'Lörem ipsüm dölör';
 
-        $this->assertEquals($result, Filename::normalize($name, 21));
+        $this->assertEquals($result, Filename::normalize($name, 20));
     }
 
     public function testTruncate()
     {
         $string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 
-        $this->assertEquals('Lorem ipsum dolor sit amet, consectetur adipiscing', Filename::truncate($string, 50));
+        $this->assertEquals('Lorem ipsum dolor sit amet, consectetur', Filename::truncate($string, 49));
 
         $string = 'Lörem ipsüm dölör sit ämet, cönsectetür ädipiscing elit.';
-        $this->assertEquals('Lörem ipsüm dölör sit ämet, cönsectetür ädipiscing', Filename::truncate($string, 50));
+        $this->assertEquals('Lörem ipsüm dölör sit ämet, cönsectetür', Filename::truncate($string, 49));
 
         $string = 'ALongStringWithoutSpaces';
         $this->assertEquals('ALongStringWithoutSp', Filename::truncate($string, 20));
