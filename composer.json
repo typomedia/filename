@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-        "php": "^5.3.3 || ^7.0 || ^8.0",
+        "php": ">=7.0",
         "symfony/polyfill-intl-normalizer": "^1.7"
     },
     "require-dev": {
@@ -28,8 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Typomedia\\Normalizer\\": "src/",
-            "Typomedia\\Normalizer\\Test\\": "tests/"
+            "Typomedia\\Normalizer\\": "src"
         }
     }
 }
