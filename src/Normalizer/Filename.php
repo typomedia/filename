@@ -3,6 +3,7 @@
 namespace Typomedia\Normalizer;
 
 use Normalizer;
+use Symfony\Component\String\UnicodeString;
 
 class Filename
 {
@@ -14,22 +15,40 @@ class Filename
      * @see http://windows.microsoft.com/en-us/windows/file-names-extensions-faq File names and file name extensions: frequently asked questions (Windows)
      * @see https://support.apple.com/en-us/HT202808 OS X: Cross-platform filename best practices and conventions (OSX)
      * @param string $name
-     * @param string $replacement
+     * @param string $replace
+     * @param int $length
      * @return string
      */
-    public static function normalize(string $name, string $replacement = '-'): string
+    public static function normalize(string $name, int $length = 255, string $replace = '-'): string
     {
         // Unicode NFC
         // https://en.wikipedia.org/wiki/Unicode_equivalence#Normal_forms
         $name = Normalizer::normalize(trim($name), Normalizer::FORM_C);
 
         // OS Safe characters
-        $name = str_replace(['\\', '/', '?', ':', '*', '"', '>', '<', '|'], $replacement, $name);
+        $name = str_replace(['\\', '/', '?', ':', '*', '"', '>', '<', '|'], $replace, $name);
 
         // Remove multiple whithespaces
         $name = preg_replace('/\s\s+/', ' ', $name);
 
         // strip control chars, backspace and delete (including \r)
-        return preg_replace('/[\x00-\x08\x0b-\x1f\x7f]/', '', $name);
+        $name = preg_replace('/[\x00-\x08\x0b-\x1f\x7f]/', '', $name);
+
+        return self::truncate($name, $length);
+    }
+
+    /**
+     * @param string $filename
+     * @param int $length
+     * @return string
+     */
+    public static function truncate(string $filename, int $length = 255): string
+    {
+        $string = new UnicodeString($filename);
+        $name = $string->truncate($length); // filename without whitespaces
+
+        $words = $name->wordwrap($length);
+
+        return $words->toString();
     }
 }
