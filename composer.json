@@ -28,7 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Typomedia\\Normalizer\\": "src"
+            "Typomedia\\Normalizer\\": "src/Normalizer"
         }
     }
 }

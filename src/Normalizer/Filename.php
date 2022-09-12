@@ -17,7 +17,7 @@ class Filename
      * @param string $replacement
      * @return string
      */
-    public static function normalize($name, $replacement = '-')
+    public static function normalize(string $name, string $replacement = '-'): string
     {
         // Unicode NFC
         // https://en.wikipedia.org/wiki/Unicode_equivalence#Normal_forms
