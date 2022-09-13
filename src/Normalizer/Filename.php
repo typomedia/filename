@@ -51,6 +51,7 @@ class Filename
      * - HFS+    255 UTF-8 bytes
      * - APFS    255 UTF-8 bytes
      *
+     * @see https://en.wikipedia.org/wiki/Comparison_of_file_systems#Limits
      * @param string $filename
      * @param int $length
      * @return string
