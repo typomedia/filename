@@ -38,6 +38,19 @@ class Filename
     }
 
     /**
+     * Filename length limits:
+     * - ext2    255 bytes
+     * - ext3    255 bytes
+     * - ext4    255 bytes
+     * - XFS     255 bytes
+     * - ZFS     255 bytes
+     * - BTRFS   255 bytes
+     * - NTFS    255 characters
+     * - FAT32   8.3 (255 UCS-2 code units with VFAT LFNs)
+     * - exFAT   255 UTF-16 characters
+     * - HFS+    255 UTF-8 bytes
+     * - APFS    255 UTF-8 bytes
+     *
      * @param string $filename
      * @param int $length
      * @return string
