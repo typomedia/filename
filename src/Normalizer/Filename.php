@@ -19,7 +19,7 @@ class Filename
      * @param int $length
      * @return string
      */
-    public static function normalize(string $name, int $length = 255, string $replace = '-'): string
+    public static function normalize(string $name, int $length = 120, string $replace = '-'): string
     {
         // Unicode NFC
         // https://en.wikipedia.org/wiki/Unicode_equivalence#Normal_forms
@@ -56,7 +56,7 @@ class Filename
      * @param int $length
      * @return string
      */
-    public static function truncate(string $filename, int $length = 255): string
+    public static function truncate(string $filename, int $length = 120): string
     {
         $string = new UnicodeString($filename);
 

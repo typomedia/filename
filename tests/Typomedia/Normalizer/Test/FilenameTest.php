@@ -2,6 +2,7 @@
 
 namespace Typomedia\Normalizer\Test;
 
+use Symfony\Component\String\UnicodeString;
 use Typomedia\Normalizer\Filename;
 use PHPUnit\Framework\TestCase;
 
@@ -74,13 +75,23 @@ class FilenameTest extends TestCase
         $this->assertEquals($result, Filename::normalize($name, 20));
     }
 
+    public function testFilenameByteLength()
+    {
+        $name = 'ÄÄÄÄÄÜÜÜÜÜÜÖÖÖÖÖÖÖßßßßßßÁÁÁÁÁÁÁÁÁÁÁéééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé';
+
+        $this->assertEquals(254, strlen($name)); // 254 bytes
+        $string = new UnicodeString($name);
+        $this->assertEquals(127, $string->length()); // 127 bytes
+    }
+
     public function testTruncate()
     {
         $string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
-
+        $this->assertEquals(56, strlen($string)); // 56 bytes
         $this->assertEquals('Lorem ipsum dolor sit amet, consectetur', Filename::truncate($string, 49));
 
         $string = 'Lörem ipsüm dölör sit ämet, cönsectetür ädipiscing elit.';
+        $this->assertEquals(64, strlen($string)); // 64 bytes
         $this->assertEquals('Lörem ipsüm dölör sit ämet, cönsectetür', Filename::truncate($string, 49));
 
         $string = 'ALongStringWithoutSpaces';
